@@ -81,8 +81,6 @@ extension VehiclesListView {
         .listStyle(.plain)
         .animation(.smooth, value: viewModel.vehicles)
         .onPreferenceChange(ScrollOffsetPreferenceKey.self) { value in
-            print(headerShadowOpacity)
-            print(value)
             self.scrollOffset = value
         }
     }
