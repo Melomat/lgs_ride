@@ -33,6 +33,8 @@ extension VehiclesListView.ViewModel {
     func fetchVehicles() {
         guard let url = URL(string: "https://random-data-api.com/api/vehicle/random_vehicle?size=\(requestSizeInput)") else { return }
         
+        // For a bigger App with multiple requests and types, I like to go with a protocol base
+        // net working layer, and I usually use Alamofire
         URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
             //This should never happen since we are in the root view of the app but you never know
             guard let self else { return }
